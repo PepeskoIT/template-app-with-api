@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  app:
+    entrypoint: ["sh", "-c", "pip install debugpy -t /tmp && python3 -Xfrozen_modules=off /tmp/debugpy --log-to /tmp/log --wait-for-client --listen 0.0.0.0:5678 main.py"]
+    ports:
+      - 5678:5678
